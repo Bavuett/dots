@@ -1,2 +1,2 @@
-# dots
-Dotfiles and other nerdy things.
+# dot
+Dotfiles for ricing configs.

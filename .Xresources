@@ -1,0 +1,57 @@
+! special
+*.foreground:   #F5DBCF
+*.background:   #0E243B
+*.cursorColor:  #F5DBCF
+
+! black
+*.color0:       #F5DBCF
+*.color8:       #cd5e2a
+
+! red
+*.color1:       #E98C7A
+*.color9:       #a7321b
+
+! green
+*.color2:       #7AAD5F
+*.color10:      #426131
+
+! yellow
+*.color3:       #B1C969
+*.color11:      #677b2c
+
+! blue
+*.color4:       #468875
+*.color12:      #28a581
+
+! magenta
+*.color5:       #6D6A50
+*.color13:      #5d5b44
+
+! cyan
+*.color6:       #fab84d
+*.color14:      #fbcc7f
+
+! white
+*.color7:       #c8b94c
+*.color15:      #e3dba5
+
+
+!URxvt Appearance and functionality
+URxvt.scrollBar: false
+URxvt.font: xft:JetBrains Mono:size=11.5,xft:Noto Emoji:size=11.5
+URxvt.internalBorder: 10
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+!Show emoji in terminal
+URxvt.perl-ext-common: default,matcher,keyboard-select,selection-to-clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.iso14755_53: false
+URxvt.iso14755_54: false
+URxvt.iso14755_55: false
+URxvt.iso14755_56: false
+URxvt.iso14755_57: false
+URxvt.iso14755_58: false
+URxvt.iso14755_59: false
+URxvt.iso14755_60: false
