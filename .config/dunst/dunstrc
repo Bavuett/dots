@@ -1,0 +1,24 @@
+[global]
+    origin = bottom-right
+    format = "<i>%a</i>\n<b>%s</b>\n%b"
+    font = "JetBrains Mono 10"
+    offset = 3x32
+    frame_color = "#285657"
+    frame_width = 2
+    gap_size = 2
+    idle_threshold = 120
+    browser = /usr/bin/xdg-open
+
+[urgency_critical]
+    foreground = "#F5DBCF"
+    timeout = 0
+
+[urgency_normal]
+    background = "#0E243B"
+    foreground = "#F5DBCF"
+    timeout = 10
+
+[urgency_low]
+    background = "#285657"
+    foreground = "#F5DBCF"
+    frame_color = "#0E243B"
