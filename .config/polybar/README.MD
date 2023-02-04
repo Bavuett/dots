@@ -1,1 +1,0 @@
-Copy in ~/.config/polybar/
