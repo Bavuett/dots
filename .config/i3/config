@@ -22,7 +22,7 @@ exec_always --no-startup-id compton
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id pkill polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-fill '/home/bavuett/dot/wallpapers/wallpaper.png'
+exec_always --no-startup-id feh --bg-fill '/home/bavuett/dots/wallpapers/wallpaper.png'
 
 set $bg #285657
 set $txt #ad9266
@@ -209,6 +209,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+exec xset -b
 exec Discord
 exec steam
 exec 1password
