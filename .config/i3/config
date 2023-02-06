@@ -11,6 +11,13 @@
 
 
 # Costumizations
+
+
+# Power Menu on Rofi
+
+bindsym $mod+Shift+W exec --no-startup-id rofi -show power-menu -modi "power-menu:~/.local/bin --no-symbols"
+
+
 exec_always --no-startup-id compton
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id pkill polybar
@@ -201,15 +208,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
-exec xset -b
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec Discord
 exec steam
 exec 1password
 
 assign [class="Google-chrome"] 1
 assign [class="Code"] 2
+assign [class="Apostrophe"] 2
+assign [class="org.gnome.Nautilus"] 3
 assign [class="GitHub Desktop"] 3
 assign [class="1Password"] 4
 assign [class="Steam"] 5
 assign [class="discord"] 6
+assign [class="Spotify"] 7
+assign [class="whatsapp-desktop-linux"] 8
