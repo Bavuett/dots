@@ -13,8 +13,6 @@ def generate_polybar_vars():
 
     result = output_to_arr
 
-    print(result)
-
     process = subprocess.Popen('ls -1 /sys/class/backlight', shell=True, stdout=subprocess.PIPE)
     output = process.communicate()[0].decode()
 
@@ -27,7 +25,7 @@ def generate_polybar_vars():
 
 
 def main():
-    print("Installing dotfiles...")
+    print('Installing dotfiles...\n')
 
     # Get the current directory.
     current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -39,18 +37,31 @@ def main():
 
     # Get the list of files in the .config directory.
     files = os.listdir(current_dir + "/.config")
-    print(f'Files: {str(files)}')
+    print(f'Directory structure: {str(files)}')
 
     for file in files:
-        # Get the source and destination paths.
         source = f'{current_dir}/.config/{file}'
+        destination = f'{home_dir}/.config/{file}'
 
-        # If the file is a directory, then we need to copy the contents of the directory.
         if os.path.isdir(source):
-            destination = f'{home_dir}/.config/{file}'
-
             print(f'Copying directory [{source}] to [{destination}]')
-            # shutil.copytree(source, destination)
+
+            if os.path.exists(destination):
+                print(f'Directory [{destination}] already exists. Removing it...')
+                
+                itemsInDir = os.listdir(destination)
+
+                for item in itemsInDir:
+                    itemPath = os.path.join(destination, item)
+                    print(f'Removing item [{itemPath}]')
+                    os.remove(itemPath)
+
+                os.rmdir(destination)
+
+            try:
+                shutil.copytree(source, destination)
+            except IOError as e:
+                print(f'Couldn\'t copy the directory. Reason: {e}')
 
             if str(file) == 'polybar':
                 variables_to_add = generate_polybar_vars()
@@ -59,16 +70,32 @@ def main():
                 try:
                     f = open(f'{destination}/variables.ini', 'x')
 
-                    content_to_write = f'[vars]\nbattery = {variables_to_add[2]}\nadapter = {variables_to_add[1]}\nbacklight = {variables_to_add[0]}'
+                    # Output from generate_polybar_vars() looks like this: [ADAPTER, BATTERY, BACKLIGHT].
+                    # For this reason we do adapter first, then battery, and we finish with backlight.
+                    # Could be improved but do not care - for now.
+                    content_to_write = f'[vars]\nadapter = {variables_to_add[0]}\nbattery = {variables_to_add[1]}\nbacklight = {variables_to_add[2]}'
 
                     f.write(content_to_write)
                     f.close()
                 except IOError as e:
                     print(f'Couldn\'t create variables file. Reason: {e}')
                     sys.exit(1)
-            else:
-                pass
+        else:
+            # Copy file which is not a directory.
+            print(f'Copying file [{source}] to [{destination}]')
 
+            if os.path.exists(destination):
+                print(f'File [{destination}] already exists. Removing it...')
+                os.remove(destination)
+
+            try:
+                shutil.copy(source, destination)
+            except IOError as e:
+                print(f'Couldn\'t copy the file. Reason: {e}')
+
+        print('Done!\n')
+
+    print('Finished installing dotfiles!\nEnjoy some coffee and relax! :)')
 
 if __name__ == "__main__":
     main()
