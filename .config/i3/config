@@ -214,6 +214,7 @@ exec steam
 exec 1password
 
 assign [class="Google-chrome"] 1
+assign [class="jetbrains-fleet"] 2
 assign [class="Code"] 2
 assign [class="Apostrophe"] 2
 assign [class="org.gnome.Nautilus"] 3
