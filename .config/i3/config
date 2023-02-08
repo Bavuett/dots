@@ -222,5 +222,5 @@ assign [class="GitHub Desktop"] 3
 assign [class="1Password"] 4
 assign [class="Steam"] 5
 assign [class="discord"] 6
-assign [class="Spotify"] 7
+for_window [class="Spotify"] move to workspace 7
 assign [class="whatsapp-desktop-linux"] 8
