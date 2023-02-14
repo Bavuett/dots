@@ -9,15 +9,6 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-
-# Costumizations
-
-
-# Power Menu on Rofi
-
-bindsym $mod+Shift+W exec --no-startup-id rofi -show power-menu -modi "power-menu:~/.local/bin --no-symbols"
-
-
 exec_always --no-startup-id compton
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id pkill polybar
@@ -88,7 +79,10 @@ bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Emoji support for Rofi
-bindsym $mod+Shift+m exec "rofi -modi 'emoji:rofimoji --action copy' -show emoji"
+bindsym $mod+Shift+z exec "rofi -modi 'emoji:rofimoji --action copy' -show emoji"
+# Power Menu for Rofi
+bindsym $mod+Shift+s exec --no-startup-id rofi -show power-menu -modi "power-menu:rofi-power-menu --no-symbols"
+
 
 # change focus
 bindsym $mod+j focus left
