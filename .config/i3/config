@@ -15,9 +15,10 @@ exec_always --no-startup-id pkill polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill '/home/bavuett/dots/wallpapers/wallpaper.png'
 
-set $bg #285657
-set $txt #ad9266
-set $unbg #161503
+set $bg         #285657
+set $txt        #ad9266
+set $unbg       #161503
+set $important  #E98C7A
 
 for_window [class=".*"] border pixel 2
 
@@ -28,6 +29,7 @@ gaps inner 8
 client.focused		$bg	$bg	$txt	$bg	$bg
 client.unfocused	$unbg   $unbg   $txt    $unbg   $unbg	
 client.focused_inactive $unbg	$unbg	$txt	$unbg	$unbg
+client.urgent           $important $important $txt $important $important
 
 set $mod Mod4
 
