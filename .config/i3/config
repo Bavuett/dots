@@ -208,7 +208,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-exec Discord
+exec flatpak run com.discordapp.Discord
 exec steam
 exec 1password
 
