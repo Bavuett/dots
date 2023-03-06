@@ -6,11 +6,11 @@
  **/
  
 * {
-    background:     #0E243B;
-    background-alt: #282B31FF;
-    border:         #285657;
-    foreground:     #F5DBCF;
-    selected:       #E98C7A;
+    background:     #36353C;
+    background-alt: #C75C79;
+    border:         #8184B0;
+    foreground:     #DAC6D2;
+    selected:       #C75C79;
     active:         #98C379FF;
     urgent:         #E06C75FF;
 }

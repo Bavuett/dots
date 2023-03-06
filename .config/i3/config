@@ -15,10 +15,10 @@ exec_always --no-startup-id pkill polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill '/home/bavuett/dots/wallpapers/wallpaper.png'
 
-set $bg         #285657
+set $bg         #8184B0
 set $txt        #ad9266
-set $unbg       #161503
-set $important  #E98C7A
+set $unbg       #36353C
+set $important  #C75C79
 
 for_window [class=".*"] border pixel 2
 

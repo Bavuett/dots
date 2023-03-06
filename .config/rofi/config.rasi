@@ -34,7 +34,7 @@ configuration {
     active-background:           var(active);
     active-foreground:           var(background);
     selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
+    selected-normal-foreground:  var(foreground);
     selected-urgent-background:  var(active);
     selected-urgent-foreground:  var(background);
     selected-active-background:  var(urgent);
@@ -103,8 +103,8 @@ prompt {
     border:                      0px;
     border-radius:               0;
     border-color:                @border-colour;
-    background-color:            @border-colour;
-    text-color:                  @foreground;
+    background-color:            @selected-normal-background;
+    text-color:                  @foreground-colour;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -119,7 +119,7 @@ entry {
     padding:                     5px 10px;
     width:                       25%;
     border-radius:               0px;
-    background-color:            @alternate-background;
+    background-color:            @background-colour;
     text-color:                  @foreground-colour;
     cursor:                      text;
     placeholder:                 "What do you want to run?";
@@ -185,8 +185,8 @@ element normal.active {
     text-color:                  var(active-foreground);
 }
 element selected.normal {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
+    background-color:            @selected-normal-background;
+    text-color:                  @selected-normal-foreground;
 }
 element selected.urgent {
     background-color:            var(selected-urgent-background);

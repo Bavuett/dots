@@ -1,39 +1,39 @@
 ! special
-*.foreground:   #F5DBCF
-*.background:   #0E243B
-*.cursorColor:  #F5DBCF
+*.foreground:   #DAC6D2
+*.background:   #36353C
+*.cursorColor:  #DAC6D2
 
 ! black
-*.color0:       #F5DBCF
-*.color8:       #cd5e2a
+*.color0:       #DAC6D2
+*.color8:       #a87a96
 
 ! red
-*.color1:       #E98C7A
-*.color9:       #a7321b
+*.color1:       #9fa651
+*.color9:       #6f7438
 
 ! green
-*.color2:       #7AAD5F
-*.color10:      #426131
+*.color2:       #8184B0
+*.color10:      #525583
 
 ! yellow
-*.color3:       #B1C969
-*.color11:      #677b2c
+*.color3:       #F1C8C2
+*.color11:      #d86857
 
 ! blue
-*.color4:       #468875
-*.color12:      #28a581
+*.color4:       #D287A5
+*.color12:      #E398E0
 
 ! magenta
-*.color5:       #6D6A50
-*.color13:      #5d5b44
+*.color5:       #4CADBD
+*.color13:      #317b87
 
 ! cyan
-*.color6:       #fab84d
-*.color14:      #fbcc7f
+*.color6:       #87AD7E
+*.color14:      #74a06a
 
 ! white
-*.color7:       #c8b94c
-*.color15:      #e3dba5
+*.color7:       #E2E6F3
+*.color15:      #b3bddf
 
 
 !URxvt Appearance and functionality
