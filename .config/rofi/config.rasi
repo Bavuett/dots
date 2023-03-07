@@ -103,8 +103,8 @@ prompt {
     border:                      0px;
     border-radius:               0;
     border-color:                @border-colour;
-    background-color:            @selected-normal-background;
-    text-color:                  @foreground-colour;
+    background-color:            @border-colour;
+    text-color:                  @background-colour;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -119,10 +119,10 @@ entry {
     padding:                     5px 10px;
     width:                       25%;
     border-radius:               0px;
-    background-color:            @background-colour;
-    text-color:                  @foreground-colour;
+    background-color:            @border-colour;
+    text-color:                  @background-colour;
     cursor:                      text;
-    placeholder:                 "What do you want to run?";
+    placeholder:                 "Search...";
     placeholder-color:           inherit;
     vertical-align:              0.5;
     horizontal-align:            0;
