@@ -81,10 +81,11 @@ bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Emoji support for Rofi
-bindsym $mod+Shift+z exec "rofi -modi 'emoji:rofimoji --action copy' -show emoji"
+bindsym $mod+Shift+z exec --no-startup-id "rofi -modi 'emoji:rofimoji --action copy' -show emoji"
 # Power Menu for Rofi
 bindsym $mod+Shift+s exec --no-startup-id rofi -show power-menu -modi "power-menu:rofi-power-menu --no-symbols"
-
+# Rofi dev launcher
+bindsym $mod+Shift+w exec --no-startup-id "ROFI_DIRECTORY=~/Coding/GitHub ROFI_EDITOR=vscode rofi -show dev -modi dev:rofi-dev-launcher"
 
 # change focus
 bindsym $mod+j focus left
