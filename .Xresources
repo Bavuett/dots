@@ -55,3 +55,6 @@ URxvt.iso14755_57: false
 URxvt.iso14755_58: false
 URxvt.iso14755_59: false
 URxvt.iso14755_60: false
+
+Xcursor.theme: macOS-BigSur
+Xcursor.size: 24
