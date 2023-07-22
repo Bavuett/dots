@@ -1,0 +1,117 @@
+[
+    {
+        // "layer": "top", // Waybar at top layer
+        // "position": "bottom", // Waybar position (top|bottom|left|right)
+        "height": 30, // Waybar height (to be removed for auto height)
+        // "width": 1280, // Waybar width
+        "spacing": 0, // Gaps between modules (4px)
+        // Choose the order of the modules
+        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-center": ["clock"],
+        "modules-right": ["network", "pulseaudio", "battery"],
+        "custom/right-parenthesis": {
+            "format": "{}",
+            "exec": "echo ']'"
+        },
+        "custom/left-parenthesis": {
+            "format": "{}",
+            "exec": "echo '['"
+        },
+        "clock": {
+            "format": "{:%A %d, %R}",
+            "format-alt": "{:%d %B %Y, %T}",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                "mode": "month",
+                "format": {
+                    "today": "<span color='#C75C79'><b><u>{}</u></b></span>"
+                }
+            },
+            "interval": 1
+        },
+        "network": {
+            "format-wifi": "",
+            "format-ethernet": "",
+            "format-disconnected": "",
+            "tooltip-format-wifi": "Network: {essid}\nAddress: {ipaddr}\nStrength: {signalStrength}%",
+            "tooltip-format-ethernet": "Address: {ipaddr}\nInterface: {ifname}",
+            "tooltip-format-disconnected": "Disconnected",
+            "on-click": "nm-connection-editor"
+        },
+        "backlight": {
+            "format": "",
+            "device": "intel_backlight",
+            "interval": 5
+        },
+        "pulseaudio": {
+            "format": "{icon}",
+            "format-muted": "",
+            "format-icons": ["", "", ""],
+            "interval": 1,
+            "tooltip-format": "Volume: {volume}%",
+            "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "battery": {
+            "bat": "BAT0",
+            "format": "{icon}",
+            "interval": 5,
+            "format-warning": " {capacity}%",
+            "format-critical": " {capacity}%",
+            "format-charging": "",
+            "format-icons": ["", "", "", "", ""],
+            "states": {
+                "warning": 25,
+                "critical": 10
+            },
+            "tooltip-format": "Battery: {capacity}%\n{}"
+        }
+    },
+    {
+        "height": 30,
+        "spacing": 0,
+        "position": "bottom",
+        "modules-left": ["custom/run", "sway/window"],
+        "modules-right": ["custom/updates", "cpu", "memory"],
+        "sway/window": {
+            "max-length": 50,
+            "rewrite": {
+                "(.*) - Google Chrome": "Google Chrome",
+                "(.*) - Visual Studio Code": "Visual Studio Code",
+                "(urxvt)": "Terminale",
+                "(foot)": "Terminale",
+                "()": "Sway"
+            }
+        },
+        "custom/run": {
+            "format": "{}",
+            "exec": "echo 'Run'",
+            "on-click": "swaymsg exec 'rofi -modi drun -show drun'"
+        },
+        "custom/right-parenthesis": {
+            "format": "{}",
+            "exec": "echo ']'"
+        },
+        "custom/left-parenthesis": {
+            "format": "{}",
+            "exec": "echo '['"
+        },
+        "custom/updates": {
+            "format": "DNF [{}]",
+            "exec": "/home/bavuett/.config/waybar/scripts/updates.sh",
+            "interval": 3600
+        },
+        "cpu": {
+            "format": "CPU [{usage}%]",
+            "interval": 1
+        },
+        "memory": {
+            "format": "RAM [{}%]",
+            "interval": 1
+        },
+        "temperature": {
+            "format": "TMP [{}°C]",
+            "interval": 5,
+            "sensors": ["coretemp"]
+        }
+    }
+]

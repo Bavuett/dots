@@ -26,6 +26,7 @@ configuration {
     handle-colour:               var(selected);
     background-colour:           var(background);
     foreground-colour:           var(foreground);
+    alt-foreground-colour:       var(unselected-txt);
     alternate-background:        var(border);
     normal-background:           var(background);
     normal-foreground:           var(foreground);
@@ -103,8 +104,8 @@ prompt {
     border:                      0px;
     border-radius:               0;
     border-color:                @border-colour;
-    background-color:            @border-colour;
-    text-color:                  @background-colour;
+    background-color:            @prompt-alt;
+    text-color:                  @foreground;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -119,8 +120,8 @@ entry {
     padding:                     5px 10px;
     width:                       25%;
     border-radius:               0px;
-    background-color:            @border-colour;
-    text-color:                  @background-colour;
+    background-color:            @prompt-alt;
+    text-color:                  @foreground;
     cursor:                      text;
     placeholder:                 "Search...";
     placeholder-color:           inherit;
@@ -167,14 +168,14 @@ element {
     border-radius:               0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    text-color:                  @foreground-colour;
+    text-color:                  @unselected-txt;
     cursor:                      pointer;
 	vertical-align:              0.5;
 	horizontal-align:            0.0;
 }
 element normal.normal {
-    background-color:            var(normal-background);
-    text-color:                  var(normal-foreground);
+    background-color:            @background;
+    text-color:                  @unselected-txt;
 }
 element normal.urgent {
     background-color:            var(urgent-background);
@@ -197,8 +198,8 @@ element selected.active {
     text-color:                  var(selected-active-foreground);
 }
 element alternate.normal {
-    background-color:            var(alternate-normal-background);
-    text-color:                  var(alternate-normal-foreground);
+    background-color:            @background;
+    text-color:                  @unselected-txt;
 }
 element alternate.urgent {
     background-color:            var(alternate-urgent-background);
