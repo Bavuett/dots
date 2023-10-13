@@ -211,9 +211,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 exec flatpak run com.discordapp.Discord
-exec steam
+exec flatpak run com.github.IsmaelMartinez.teams_for_linux 
 exec 1password
 
 assign [class="Google-chrome"] 1
@@ -223,7 +223,7 @@ assign [class="Apostrophe"] 2
 assign [class="org.gnome.Nautilus"] 3
 assign [class="GitHub Desktop"] 3
 assign [class="1Password"] 4
-assign [class="steam"] 5
+assign [class="teams-for-linux"] 5
 assign [class="discord"] 6
 for_window [class="Spotify"] move to workspace 7
 assign [class="whatsapp-desktop-linux"] 8
