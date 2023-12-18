@@ -54,6 +54,7 @@ symbol = "deno "
 symbol = ".NET "
 
 [directory]
+style = "blue"
 read_only = " ro"
 
 [docker_context]
