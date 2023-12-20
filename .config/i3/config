@@ -213,7 +213,7 @@ bindsym $mod+r mode "resize"
 
 exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 # exec flatpak run com.discordapp.Discord
-exec flatpak run com.github.IsmaelMartinez.teams_for_linux 
+# exec flatpak run com.github.IsmaelMartinez.teams_for_linux 
 exec 1password
 
 assign [class="Google-chrome"] 1
